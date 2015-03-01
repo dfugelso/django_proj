@@ -4,3 +4,4 @@ from myblog.models import Post
 
 admin.site.register(Post)
 
+**********************************
