@@ -10,14 +10,15 @@ class CategoriesInline(admin.TabularInline):
     
 class PostAdmin(admin.ModelAdmin):
    model= Post
+   #fields = ('title', 'text', 'author', 'published_date', 'created_date', 'modified_date')
    inlines = [
         CategoriesInline,
      ]
     
     
-# class CategoryAdmin(admin.ModelAdmin):
-    # pass
+class CategoryAdmin(admin.ModelAdmin):
+    exclude = ['posts']
     
 admin.site.register(Post, PostAdmin)
-# #admin.site.register(Category, CategoryAdmin)
+admin.site.register(Category, CategoryAdmin)
 
