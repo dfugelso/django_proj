@@ -1,6 +1,8 @@
 from django.db import models
 from django.contrib.auth.models import User
 
+
+    
 # Create your models here.
 class Post(models.Model):
     title = models.CharField(max_length=128)
@@ -9,16 +11,22 @@ class Post(models.Model):
     created_date = models.DateTimeField(auto_now_add=True)
     modified_date = models.DateTimeField(auto_now=True)
     published_date = models.DateTimeField(blank=True, null=True)
+    #post_categories = models.ForeignKey('Category')
+
 
     def __unicode__(self):
         return self.title
 
 
 class Category(models.Model):
+    class Meta:
+        #db_table = 'Categories'
+        verbose_name = 'Categorie'
+        
     name = models.CharField(max_length=128)
     description = models.TextField(blank=True)
-    posts = models.ManyToManyField(Post, blank=True, null=True,
-                                   related_name='categories')
+    posts = models.ManyToManyField('Post', blank=True, null=True, related_name='categories')
+
 
     def __unicode__(self):
         return self.name

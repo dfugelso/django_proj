@@ -1,0 +1,12 @@
+from django.contrib import admin
+
+from myblog.models import Post
+from myblog.models import Category
+
+admin.site.register(Post)
+<<<<<<< HEAD
+
+**********************************
+=======
+admin.site.register(Category)
+>>>>>>> 1b80d24af1b3376e48751fdc0f941c010bdac584
