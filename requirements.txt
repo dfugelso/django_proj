@@ -1,0 +1,6 @@
+dj-database-url==0.3.0
+Django==1.7.4
+django-ckeditor==4.4.7
+django-ckeditor-updated==4.4.4
+django-registration-redux==1.1
+pytz==2014.10
